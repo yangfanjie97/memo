@@ -1,9 +1,9 @@
 // https://eslint.org/docs/user-guide/configuring
 module.exports = {
     root: true,
-    parser: 'babel-eslint',
     parserOptions: {
-        sourceType: 'module'
+        sourceType: 'module',
+        parser: 'babel-eslint',
     },
     env: {
         browser: true,
@@ -564,13 +564,12 @@ module.exports = {
         // 限制变量名必须匹配指定的正则表达式
         // @off 没必要限制变量名
         'id-match': 'off',
-        // @fixable 一个缩进必须用四个空格替代
-        'indent': [
+        'indent': 'off',
+        'vue/script-indent': [
             'error',
             4,
             {
-                SwitchCase: 1,
-                flatTernaryExpressions: true
+                'baseIndent': 1
             }
         ],
         // @fixable jsx 中的属性必须用双引号
