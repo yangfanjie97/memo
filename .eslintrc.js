@@ -670,14 +670,15 @@ module.exports = {
         // @off 没必要限制
         'no-multi-assign': 'off',
         // @fixable 禁止出现超过三行的连续空行
-        'no-multiple-empty-lines': [
+        /*'no-multiple-empty-lines': [
             'error',
             {
                 max: 3,
                 maxEOF: 1,
                 maxBOF: 1
             }
-        ],
+        ],*/
+        "no-multiple-empty-lines": [0, {"max": 3}],
         // 禁止 if 里面有否定的表达式，比如：
         // if (a !== b) {
         //     doSomething();
