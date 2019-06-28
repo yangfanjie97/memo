@@ -28,6 +28,14 @@ module.exports = {
             }
         }
     },
+    overrides:[
+        {
+            'files':['*.vue'],
+            'rules':{
+                'indent':'off'
+            }
+        }
+    ],
     // 使用腾讯 AlloyTeam 的 ESLint 规则
     // https://github.com/AlloyTeam/eslint-config-alloy/blob/master/index.js
     rules: {
@@ -564,14 +572,11 @@ module.exports = {
         // 限制变量名必须匹配指定的正则表达式
         // @off 没必要限制变量名
         'id-match': 'off',
-        'indent': 'off',
-        'vue/script-indent': [
-            'error',
-            4,
-            {
-                'baseIndent': 1
-            }
-        ],
+        // @fixable 一个缩进必须用四个空格替代
+        'indent': [2, 4, {
+            'SwitchCase': 1
+        }],
+        'vue/script-indent': ['error', 4, {'baseIndent': 1}],
         // @fixable jsx 中的属性必须用双引号
         'jsx-quotes': [
             'error',
